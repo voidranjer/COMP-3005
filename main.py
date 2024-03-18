@@ -13,20 +13,29 @@ def main():
     input("\nPress Enter to continue...")
 
     # add a student
-    studentUtils.addStudent("James", "Yap", "contact@jamesyap.org", "2024-03-17")
+    print("Adding a new student...")
+    first_name = input("Enter the first name: ")
+    last_name = input("Enter the last name: ")
+    email = input("Enter the email: ")
+    enrollment_date = input("Enter the enrollment date (YYYY-MM-DD): ")
+    # studentUtils.addStudent("James", "Yap", "contact@jamesyap.org", "2024-03-17")
+    studentUtils.addStudent(first_name, last_name, email, enrollment_date)
     studentUtils.printAllStudents()
     print("Added a student!")
     input("\nPress Enter to continue...")
 
-    student_id = input("Enter the student ID to update: ")
 
     # update a student's email
-    studentUtils.updateStudentEmail(student_id, "jamesyap@cmail.carleton.ca")
+    student_id = input("Enter the student ID to update: ")
+    new_email = input("Enter the new email: ")
+    # studentUtils.updateStudentEmail(student_id, "jamesyap@cmail.carleton.ca")
+    studentUtils.updateStudentEmail(student_id, new_email)
     studentUtils.printAllStudents()
     print("Updated a student's email!")
     input("\nPress Enter to continue...")
 
     # delete a student
+    student_id = input("Enter the student ID to delete: ")
     studentUtils.deleteStudent(student_id)
     studentUtils.printAllStudents()
     print("Deleted a student!")
